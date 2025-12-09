@@ -11,12 +11,12 @@ function TrackStatus() {
   const [issues, setIssues] = useState([]);
   const [loading, setLoading] = useState(true);
 
-useEffect(() => {
+  useEffect(() => {
     if (!token) return;
 
     const fetchReports = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/reports', {
+        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/reports`, {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`

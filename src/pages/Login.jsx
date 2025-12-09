@@ -15,7 +15,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const res = await axios.post("https://your-backend-url.onrender.com/api/auth/login", {
+      const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/login`, {
         email,
         password
       });
@@ -34,17 +34,15 @@ function Login() {
   return (
     <div className="login-page-wrapper">
       <div className="login-container">
-        
         <div className="login-header">
           <div className="user-icon">
             <User color="white" strokeWidth={2.5} />
           </div>
           <h2>Welcome Back</h2>
-          <p>Sign in to your EcoTrack account</p>
+          <p>Sign in to your WasteTrack account</p>
         </div>
 
         <form className="login-form" onSubmit={handleLogin}>
-          
           <div className="form-group">
             <label htmlFor="email">Email</label>
             <div className="input-with-icon">
@@ -80,11 +78,7 @@ function Login() {
               <input type="checkbox" id="remember" />
               <label htmlFor="remember">Remember me</label>
             </div>
-            
-            <Link 
-              to="/forgot-password" 
-              style={{ color: '#28a745', textDecoration: 'none', fontWeight: 500 }}
-            >
+            <Link to="/forgot-password" style={{ color: '#28a745', textDecoration: 'none', fontWeight: 500 }}>
               Forgot password?
             </Link>
           </div>
@@ -100,10 +94,7 @@ function Login() {
       </div>
 
       <div className="login-footer">
-        By signing in, you agree to our{' '}
-        <Link to="/terms-of-service">Terms of Service</Link>
-        {' '}and{' '}
-        <Link to="/privacy-policy">Privacy Policy</Link>
+        By signing in, you agree to our <Link to="/terms-of-service">Terms of Service</Link> and <Link to="/privacy-policy">Privacy Policy</Link>
       </div>
     </div>
   );
