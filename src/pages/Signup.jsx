@@ -21,7 +21,7 @@ export default function Signup() {
     }
 
     try {
-      const res = await axios.post("https://your-backend-url.onrender.com/api/auth/signup", {
+      const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/signup`, {
         fullName,
         email,
         password
@@ -43,7 +43,6 @@ export default function Signup() {
   return (
     <div className="su-page">
       <div className="su-container">
-        
         <div className="su-header">
           <div className="su-logo-container">
             <UserPlus color="white" size={28} />
@@ -53,7 +52,6 @@ export default function Signup() {
         </div>
 
         <form onSubmit={handleSubmit} className="su-form">
-          
           <div className="su-form-group">
             <label className="su-label">Full Name</label>
             <div className="su-input-wrapper">
@@ -133,7 +131,6 @@ export default function Signup() {
           <div className="su-login-prompt">
             Already have an account? <Link to="/login">Sign in</Link>
           </div>
-
         </form>
       </div>
     </div>
