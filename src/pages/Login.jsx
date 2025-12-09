@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
-import { useAuth } from "../AuthContext";
+import { useAuth } from "../AuthContext"; // make sure you have this context
 import { User, Mail, Lock } from 'lucide-react'; 
 import './Login.css'; 
 
@@ -10,24 +10,40 @@ function Login() {
   const { setUser } = useAuth(); 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const BACKEND_URL = "https://ecotrack-backend-n5pv.onrender.com";
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setError("");
+    setLoading(true);
 
     try {
-      const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/login`, {
+      const res = await axios.post(`${BACKEND_URL}/api/auth/login`, {
         email,
         password
       });
 
       const { token, fullName, email: userEmail } = res.data;
 
+      // Save token and user info in localStorage
       localStorage.setItem("token", token);
+      localStorage.setItem("userEmail", userEmail);
+      localStorage.setItem("userName", fullName);
+
+      // Update auth context
       setUser({ fullName, email: userEmail, token });
-      navigate("/"); 
+
+      // Navigate to dashboard/home
+      navigate("/");
+
     } catch (err) {
-      console.error(err);
-      alert(err.response?.data?.message || "Login failed");
+      console.error("Login failed:", err.response || err);
+      setError(err.response?.data?.message || "Login failed. Check credentials.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -39,10 +55,12 @@ function Login() {
             <User color="white" strokeWidth={2.5} />
           </div>
           <h2>Welcome Back</h2>
-          <p>Sign in to your WasteTrack account</p>
+          <p>Sign in to your EcoTrack account</p>
         </div>
 
         <form className="login-form" onSubmit={handleLogin}>
+          {error && <div className="error-alert">{error}</div>}
+
           <div className="form-group">
             <label htmlFor="email">Email</label>
             <div className="input-with-icon">
@@ -73,28 +91,18 @@ function Login() {
             </div>
           </div>
 
-          <div className="form-options">
-            <div className="remember-me">
-              <input type="checkbox" id="remember" />
-              <label htmlFor="remember">Remember me</label>
-            </div>
-            <Link to="/forgot-password" style={{ color: '#28a745', textDecoration: 'none', fontWeight: 500 }}>
-              Forgot password?
-            </Link>
-          </div>
-
-          <button type="submit" className="btn btn-primary">
-            Sign In
+          <button type="submit" className="btn btn-primary" disabled={loading}>
+            {loading ? "Signing in..." : "Sign In"}
           </button>
 
           <div className="signup-link">
-            Don't have an account? <Link to="/signup">Sign up for free</Link>
+            Don't have an account? <Link to="/signup">Sign up</Link>
           </div>
         </form>
       </div>
 
       <div className="login-footer">
-        By signing in, you agree to our <Link to="/terms-of-service">Terms of Service</Link> and <Link to="/privacy-policy">Privacy Policy</Link>
+        © 2025 EcoTrack. All rights reserved.
       </div>
     </div>
   );
