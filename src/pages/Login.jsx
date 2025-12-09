@@ -15,7 +15,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:3000/api/auth/login", {
+      const res = await axios.post("https://your-backend-url.onrender.com/api/auth/login", {
         email,
         password
       });
@@ -40,7 +40,7 @@ function Login() {
             <User color="white" strokeWidth={2.5} />
           </div>
           <h2>Welcome Back</h2>
-          <p>Sign in to your WasteTrack account</p>
+          <p>Sign in to your EcoTrack account</p>
         </div>
 
         <form className="login-form" onSubmit={handleLogin}>

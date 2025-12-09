@@ -11,7 +11,8 @@ const Schedule = () => {
   useEffect(() => {
     const fetchSchedules = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/schedules");
+        // Change the URL to your deployed backend API
+        const res = await fetch("https://your-backend-url.onrender.com/api/schedules");
         const data = await res.json();
         setSchedules(data);
         setLoading(false);

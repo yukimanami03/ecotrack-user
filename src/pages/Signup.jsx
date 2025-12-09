@@ -15,20 +15,18 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Optional: client-side password confirmation check
     if (password !== confirmPassword) {
       alert("Passwords do not match");
       return;
     }
 
     try {
-      const res = await axios.post("http://localhost:3000/api/auth/signup", {
+      const res = await axios.post("https://your-backend-url.onrender.com/api/auth/signup", {
         fullName,
         email,
         password
       });
 
-      // Backend should return a token or message
       if (res.data.token) {
         localStorage.setItem("token", res.data.token);
       }
