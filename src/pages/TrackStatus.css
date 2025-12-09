@@ -1,0 +1,222 @@
+:root {
+  --primary-green: #0f9d58;
+  --bg-light: #f0fdf4;
+  --text-dark: #1f2937;
+  --text-gray: #6b7280;
+  --border-color: #e5e7eb;
+  
+  --status-resolved-bg: #dcfce7;
+  --status-resolved-text: #166534;
+  --status-progress-bg: #dbeafe;
+  --status-progress-text: #1e40af;
+  --status-pending-bg: #fef3c7;
+  --status-pending-text: #92400e;
+}
+
+.track-status-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8fcf9;
+}
+
+.hero-section {
+  width: 100%;
+  background-color: #0f9d58;
+  color: white;
+  padding: 3.5rem 1rem 4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: -3rem;
+}
+
+.hero-icon-container {
+  width: 56px;
+  height: 56px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.hero-icon {
+  color: #0f9d58;
+  font-size: 1.5rem;
+}
+
+.header-title {
+  font-size: 2.2rem;
+  color: white;
+  font-weight: 700;
+  margin: 1rem 0 0.5rem;
+}
+
+.header-subtitle {
+  font-size: 1rem;
+  color: white;
+  opacity: 0.9;
+  margin-bottom: -37px;
+  max-width: 600px;
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  margin-top: 60px;
+}
+
+.filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.filter-btn:hover {
+  background-color: #f9fafb;
+}
+
+.filter-btn.active {
+  background-color: var(--primary-green);
+  color: white;
+  font-weight: 550;
+  border-color: var(--primary-green);
+}
+
+.count-badge {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.no-reports {
+  text-align: center;
+  width: 100%;
+  padding: 1rem 0;
+  color: var(--text-gray);
+  font-size: 1rem;
+}
+
+.issues-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+  .issues-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .issues-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.issue-card {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 1px;
+  height: 18rem;
+}
+
+.ts-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 10px;
+}
+
+.issue-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+  line-height: 1;
+}
+
+.status-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.status-resolved {
+  background-color: var(--status-resolved-bg);
+  color: var(--status-resolved-text);
+}
+
+.status-in-progress {
+  background-color: var(--status-progress-bg);
+  color: var(--status-progress-text);
+}
+
+.status-pending {
+  background-color: var(--status-pending-bg);
+  color: var(--status-pending-text);
+}
+
+.issue-description {
+  color: var(--text-gray);
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0 0 1.5rem 0;
+  flex-grow: 1;
+}
+
+.card-details {
+  border-top: 1px solid #f3f4f6;
+  padding-top: 1rem;
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  margin-bottom: 0.6rem;
+}
+
+.detail-row:last-child {
+  margin-bottom: 0;
+}
+
+.detail-icon {
+  width: 18px;
+  height: 18px;
+  color: #10b981;
+  flex-shrink: 0;
+}

@@ -1,0 +1,96 @@
+.terms-page-container {
+  background-color: #f8f9fa; 
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #334155; 
+}
+
+.terms-header {
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+}
+
+.terms-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0f172a; 
+  margin-bottom: 8px;
+}
+
+.last-updated {
+  font-size: 14px;
+  color: #64748b; 
+  margin: 0;
+}
+
+.terms-card {
+  background-color: #ffffff;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.terms-content p {
+  line-height: 1.6;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.terms-content h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.terms-content ul {
+  list-style-type: disc;
+  padding-left: 24px;
+  margin-bottom: 16px;
+}
+
+.terms-content li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.terms-divider {
+  border: 0;
+  border-top: 1px solid #e2e8f0;
+  margin: 32px 0;
+}
+
+.terms-content a {
+  color: #10b981; 
+  text-decoration: none;
+}
+
+.terms-content a:hover {
+  text-decoration: underline;
+  color: #059669; 
+}
+
+.intro-text {
+  font-size: 16px;
+  color: #475569;
+}
+
+.contact-section p {
+  color: #64748b;
+  font-size: 15px;
+}
+
+@media (max-width: 600px) {
+  .terms-card {
+    padding: 24px;
+  }
+  
+  .terms-header h1 {
+    font-size: 24px;
+  }
+}

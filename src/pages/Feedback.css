@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.feedback-wrapper {
+  background-color: #f8fafc;
+  min-height: 100vh;
+  padding: 60px 20px;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feedback-header {
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+.feedback-header h1 {
+  color: #0f172a;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.feedback-header p {
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.feedback-card {
+  background: white;
+  width: 100%;
+  max-width: 550px;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  border: 1px solid #e2e8f0;
+}
+
+.rating-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.rating-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stars-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.star-icon {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.star-icon:hover {
+  transform: scale(1.1);
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.optional {
+  font-weight: 400;
+  color: #94a3b8;
+  margin-left: 4px;
+}
+
+.form-group input,
+.form-group textarea {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  color: #334155;
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #94a3b8;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #10b981;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.form-group textarea {
+  resize: none;
+}
+
+.submit-btn {
+  background-color: #009e60;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #047857;
+}
+
+@media (max-width: 600px) {
+  .feedback-card {
+    padding: 25px;
+  }
+  
+  .feedback-header h1 {
+    font-size: 1.75rem;
+  }
+}

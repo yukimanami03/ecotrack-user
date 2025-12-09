@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.emergency-wrapper {
+  background-color: #f8fafc;
+  padding: 50px 20px;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.emergency-container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.emergency-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.urgent-tag {
+  background-color: #fef2f2;
+  color: #ef4444;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.emergency-header h1 {
+  color: #0f172a;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+  text-align: center;
+}
+
+.subtitle {
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.hotline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.hotline-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.hotline-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.hotline-card h3 {
+  color: #0f172a;
+  font-size: 1.25rem;
+  margin: 20px 0 10px 0;
+}
+
+.hotline-card p {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+}
+
+.icon-container {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.icon-red { 
+  background-color: #fef2f2; 
+  color: #ef4444; 
+}
+
+.icon-orange { 
+  background-color: #fff7ed; 
+  color: #f97316; 
+}
+
+.icon-dark { 
+  background-color: #f1f5f9; 
+  color: #334155; 
+}
+
+.icon-green { 
+  background-color: #f0fdf4; 
+  color: #22c55e; 
+}
+
+.icon-blue { 
+  background-color: #eff6ff; 
+  color: #3b82f6; 
+}
+
+.icon-purple { 
+  background-color: #f5f3ff; 
+  color: #8b5cf6; 
+}
+
+.call-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #0f172a;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.call-button:hover {
+  background-color: #1e293b;
+}
+
+.footer-banner {
+  background-color: #ecfdf5;
+  border-radius: 12px;
+  padding: 30px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-text h4 {
+  color: #064e3b;
+  font-size: 1.1rem;
+  margin: 0 0 5px 0;
+}
+
+.footer-text p {
+  color: #047857;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.report-btn {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.report-btn:hover {
+  background-color: #059669;
+}
+
+@media (max-width: 600px) {
+  .header-section h1 {
+    font-size: 2rem;
+  }
+  
+  .footer-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
